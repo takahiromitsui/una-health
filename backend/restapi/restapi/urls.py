@@ -9,12 +9,12 @@ from drf_spectacular.views import (
 from restapi.glucose_levels.views import GlucoseLevelViewSet
 
 router = DefaultRouter()
-router.register(r"glucose_levels", GlucoseLevelViewSet, basename="glucose_levels")
+router.register(r"levels", GlucoseLevelViewSet, basename="glucose_levels")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(router.urls)),
-    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path("api/v1/", include(router.urls)),
+    path("api/v1/schema/", SpectacularAPIView.as_view(), name="schema"),
     path(
         "api/docs/",
         SpectacularSwaggerView.as_view(url_name="schema"),
