@@ -7,7 +7,7 @@ from .serializers import GlucoseLevelSerializer
 
 
 # Create your views here.
-class GlucoseLevelViewSet(viewsets.ModelViewSet):
+class GlucoseLevelViewSet(viewsets.ViewSet):
     queryset = GlucoseLevel.objects.all()
 
     @extend_schema(responses=GlucoseLevelSerializer)
