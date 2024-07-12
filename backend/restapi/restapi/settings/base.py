@@ -19,6 +19,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # internal apps
     "restapi.glucose_levels",
+    # REST
+    "rest_framework",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
