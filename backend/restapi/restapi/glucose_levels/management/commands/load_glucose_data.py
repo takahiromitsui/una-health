@@ -3,6 +3,7 @@ import os
 from django.core.management.base import BaseCommand, CommandParser
 
 
+# poetry run python manage.py load_glucose_data ./restapi/glucose_levels/data_files/
 class Command(BaseCommand):
     help = "Load glucose data from a CSV file"
 
