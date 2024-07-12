@@ -81,11 +81,16 @@ class GlucoseLevelViewSet(viewsets.ViewSet):
     def list(self, request):
         user_id = request.query_params.get("user_id")
         if user_id:
-          queryset = GlucoseLevel.objects.filter(user__user_id=user_id)
-          if queryset.exists():
-              serializer = GlucoseLevelSerializer(queryset, many=True)
-              return Response(serializer.data)
-          else:
-              return Response({"error": "No glucose levels found for the given user ID"}, status=404)
+            queryset = GlucoseLevel.objects.filter(user__user_id=user_id).order_by(
+                "device_timestamp"
+            )
+            if queryset.exists():
+                serializer = GlucoseLevelSerializer(queryset, many=True)
+                return Response(serializer.data)
+            else:
+                return Response(
+                    {"error": "No glucose levels found for the given user ID"},
+                    status=404,
+                )
         else:
             return Response({"error": "user_id parameter is required"}, status=400)
