@@ -22,40 +22,40 @@ To run this project locally, follow these steps:
 2. **Poetry install**
    This project uses Poetry for dependency management. To install Poetry, follow the instructions on the [Poetry website](https://python-poetry.org/docs/#installation).
 
-Once you have Poetry installed, you can install the project dependencies with:
-
-```bash
-  cd backend
-  poetry install
-```
+    Once you have Poetry installed, you can install the project dependencies with:
+    
+    ```bash
+    cd backend
+    poetry install
+    ```
 
 3. Migration and insert data
 
-```bash
+    ```bash
     cd rest_api
     # migration
     poetry run python manage.py migrate
     # load csv files
     poetry run python manage.py load_glucose_data ./restapi/glucose_levels/data_files/
-```
+    ```
 
 
 
 4. Access the application:
-```bash
-
-poetry run python manage.py runserver
-
-```
-
-- Django Endpoint: Open your browser and go to http://127.0.0.1:8000/api/docs/ to view the API documentation and test endpoints.
+    ```bash
+    
+    poetry run python manage.py runserver
+    
+    ```
+    
+    - Django Endpoint: Open your browser and go to http://127.0.0.1:8000/api/docs/ to view the API documentation and test endpoints.
 
 
 5. Run tests:
 
-```bash
-poetry run pytest
-```
+    ```bash
+    poetry run pytest
+    ```
 
 
 
