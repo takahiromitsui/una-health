@@ -20,4 +20,4 @@ class GlucoseLevel(models.Model):
     )  # Glukosewert-Verlauf mg/dL
 
     def __str__(self):
-        return f"{self.user.user_id} - {self.device} - {self.device_timestamp}"
+        return self.glucose_value_history
